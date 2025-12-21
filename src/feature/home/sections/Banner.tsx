@@ -31,7 +31,7 @@ export default function Banner() {
                 your day.
               </p>
             </div>
-            <button className="group bg-[var(--primary)] transition-colors text-white px-8 py-4 rounded-full flex items-center gap-2 font-medium mx-auto md:mx-0 cursor-pointer">
+            <button className="group bg-[var(--primary)]  text-white px-8 py-4 rounded-full flex items-center gap-2 font-medium mx-auto md:mx-0 cursor-pointer">
               Order Now
               <ArrowRight
                 size={20}
