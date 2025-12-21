@@ -3,11 +3,18 @@ import React, { useState, useEffect, useRef } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import Image from "next/image";
 import Link from "next/link";
-import { Drawer, ConfigProvider } from "antd";
+import { Drawer } from "antd";
 import { usePathname, useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import navItems from "@/constants/navItem";
 import "aos/dist/aos.css";
+import { Poppins } from "next/font/google";
+import { RiMoonLine, RiSunLine } from "react-icons/ri";
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
 export default function Navbar() {
   const pathname = usePathname();
   const cookieLang = Cookies.get("lang");
@@ -15,6 +22,7 @@ export default function Navbar() {
   const router = useRouter();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
   const [showNavbar, setShowNavbar] = useState(true);
   const lastScrollTop = useRef(0);
@@ -52,61 +60,72 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0  z-50 w-full transition-all duration-500 navbar-container 
+      className={`fixed top-0  z-50 w-full h-20 flex-center transition-all duration-500 navbar-container 
         ${isScrolled
-          ? "bg-white mt-0"
+          ? "bg-[#fff1eb] mt-0"
           : "bg-transparent lg:bg-transparent md:px-8 2xl:px-0  lg:backdrop-blur-none  "
         }
         ${showNavbar ? "translate-y-0" : "-translate-y-28"}
       `}
     >
       <div
-        className={`container mx-auto px-4  py-5 transition-colors duration-300`}
+        className={`container mx-auto transition-colors duration-300`}
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href={"/"} className="shrink-0 -mt-2">
+          <Link href={"/"} className="shrink-0 -mt-2 flex items-center gap-2">
             <Image
-              src="/logo 2.png"
-              alt="VIAJIA Logo"
-              width={180}
+              src="/logo.png"
+              alt="Sushi Logo"
+              width={80}
               height={80}
-              className="h-12 lg:h-14 w-fit"
+              className="h-[35px] lg:h-[25px] w-fit"
             />
+            <p className="text-xl font-semibold text-[#2C2420] hover:text-primary ">Sushi </p>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navItems?.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className={`text-sm lg:text-xs 2xl:text-sm transition-all duration-300 ${item.href === pathname
-                  ? "relative font-semibold px-8 py-2 rounded-full text-white bg-primary backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
-                  : "text-[#000000] hover:text-primary"
-                  }`}
-                style={{
-                  backdropFilter:
-                    item.href === pathname
-                      ? "blur(10px) saturate(120%)"
-                      : "none",
-                  WebkitBackdropFilter:
-                    item.href === pathname
-                      ? "blur(10px) saturate(120%)"
-                      : "none",
-                }}
-              >
-                {item.labelKey}
-              </Link>
-            ))}
+          <div className="hidden lg:flex items-center gap-12">
+            <div className="hidden lg:flex items-center gap-12">
+              {navItems?.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className={` text-sm lg:text-lg ${poppins.className} lg:text-xs 2xl:text-sm transition-all duration-300 font-medium ${item.href === pathname
+                    ? "relative  text-primary"
+                    : "text-[#2C2420] hover:text-primary"
+                    }`}
+                  style={{
+                    backdropFilter:
+                      item.href === pathname
+                        ? "blur(10px) saturate(120%)"
+                        : "none",
+                    WebkitBackdropFilter:
+                      item.href === pathname
+                        ? "blur(10px) saturate(120%)"
+                        : "none",
+                  }}
+                >
+                  {item.labelKey}
+                </Link>
+              ))}
+            </div>
+            <div onClick={() => setIsDark(!isDark)} className="cursor-pointer  transition-all duration-300 text-[#2C2420]">
+              {
+                isDark ? <RiMoonLine size={20} /> : <RiSunLine size={20} />
+              }
+            </div>
+
           </div>
 
           {/* Right Section - Language + Download + Menu */}
-          <div className="flex items-center gap-4">
-            <button className="cursor-pointer hidden lg:block bg-[#06825C] text-white px-6 py-2 rounded-full transition-colors text-base font-semibold">
-              Download App
-            </button>
+          <div className="lg:hidden flex items-center gap-4">
 
+            <div onClick={() => setIsDark(!isDark)}>
+              {
+                isDark ? <RiMoonLine size={20} /> : <RiSunLine size={20} />
+              }
+            </div>
             <button
               className="lg:hidden  text-xl"
               onClick={() => setDrawerOpen(true)}
@@ -118,52 +137,34 @@ export default function Navbar() {
       </div>
 
       {/* Drawer for Mobile */}
-      <ConfigProvider
-        theme={
-          {
-            // components: {
-            //   Drawer: {
-            //     colorBgElevated: "#171717",
-            //     colorText: "rgba(255,255,255,0.88)",
-            //   },
-            // },
-          }
-        }
-      >
-        <Drawer
-          title={
-            <div className="flex justify-between items-center">
-              <span className="font-semibold text-lg">Menu</span>
-              {/* <CloseOutlined onClick={() => setDrawerOpen(false)} /> */}
-            </div>
-          }
-          placement="right"
-          width={280}
-          onClose={() => setDrawerOpen(false)}
-          open={drawerOpen}
-        >
-          <div className="flex flex-col gap-6 mt-4">
-            {navItems?.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className={`${item.href === pathname
-                  ? "relative font-semibold pl-4 -ml-4 py-2 rounded-lg  bg-primary! text-white! backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
-                  : " hover:text-primary text-[#000000]!"
-                  } text-base   transition-all`}
-                onClick={() => setDrawerOpen(false)}
-              >
-                {item.labelKey}
-              </Link>
-            ))}
-
-            {/* Download Button */}
-            <button className="bg-[#06825C] text-white px-6 py-2 rounded-full transition-colors text-sm w-full">
-              Download App
-            </button>
+      <Drawer
+        title={
+          <div className="flex justify-between items-center">
+            <span className="font-semibold text-lg">Menu</span>
+            {/* <CloseOutlined onClick={() => setDrawerOpen(false)} /> */}
           </div>
-        </Drawer>
-      </ConfigProvider>
+        }
+        placement="right"
+        width={280}
+        onClose={() => setDrawerOpen(false)}
+        open={drawerOpen}
+      >
+        <div className="flex flex-col gap-6 ">
+          {navItems?.map((item, index) => (
+            <Link
+              key={index}
+              href={item.href}
+              className={`${item.href === pathname
+                ? "relative font-semibold pl-4 -ml-4 py-2 rounded-lg  bg-primary! text-white! backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+                : " hover:text-primary text-[#000000]!"
+                } text-base   transition-all`}
+              onClick={() => setDrawerOpen(false)}
+            >
+              {item.labelKey}
+            </Link>
+          ))}
+        </div>
+      </Drawer>
     </nav>
   );
 }

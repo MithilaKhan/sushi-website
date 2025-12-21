@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Lora, Poppins } from "next/font/google";
 import "./globals.css";
 import AntProvider from "../lib/provider/AntProvider";
 import { Toaster } from "sonner";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const lora = Lora({
+  variable: "--font-lora",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -27,7 +33,7 @@ export default function RootLayout({
     <AntProvider>
       <html lang="en">
         <body
-          className={`${poppins.variable} ${playfair.variable} antialiased font-sans bg-background text-foreground`}
+          className={`${lora.variable} ${poppins.variable} antialiased font-sans bg-background text-foreground`}
         >
           <Toaster position="top-center" duration={2000} />
           {children}

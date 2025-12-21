@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fff1eb;
   --foreground: #0a0a0a;
-  --primary: #09b782;
+  --primary: #d36836;
 }
 
 @theme inline {
@@ -16,14 +16,17 @@
 
 @layer utilities {
   .section-title {
-    @apply text-3xl lg:text-5xl  font-semibold mb-6;
+    @apply text-3xl lg:text-5xl font-semibold mb-6;
   }
+
   .section-subtitle {
-    @apply text-[#242424] text-[16px] lg:text-lg  leading-relaxed;
+    @apply text-[#242424] text-[16px] lg:text-lg leading-relaxed;
   }
+
   .container {
-    @apply container mx-auto px-4 md:px-5;
+    @apply max-w-screen-xl mx-auto px-4 md:px-5;
   }
+
   .flex-center {
     @apply flex justify-center items-center
   }
@@ -32,6 +35,15 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.font-lora {
+  font-family: var(--font-lora), serif;
+}
+
+
+.font-poppins {
   font-family: var(--font-poppins), sans-serif;
 }
 
