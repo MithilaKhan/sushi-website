@@ -16,15 +16,21 @@
 
 @layer utilities {
   .section-title {
-    @apply text-3xl lg:text-5xl font-semibold mb-6;
+    @apply text-xl lg:text-2xl font-semibold leading-tight mb-4 tracking-wide text-primary;
+    font-family: var(--font-dancing), cursive;
   }
 
   .section-subtitle {
-    @apply text-[#242424] text-[16px] lg:text-lg leading-relaxed;
+    @apply text-3xl lg:text-4xl font-medium leading-12 mb-6 tracking-wide;
+  }
+
+  .section-description {
+    @apply text-[#68544B] text-sm lg:text-[18px] leading-relaxed;
+    font-family: var(--font-poppins), sans-serif;
   }
 
   .container {
-    @apply max-w-screen-xl mx-auto px-4 md:px-5;
+    @apply max-w-[1200px] mx-auto px-4 md:px-5;
   }
 
   .flex-center {

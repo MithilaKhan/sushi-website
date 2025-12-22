@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lora, Poppins } from "next/font/google";
+import { Dancing_Script, Lora, Poppins } from "next/font/google";
 import "./globals.css";
 import AntProvider from "../lib/provider/AntProvider";
 import { Toaster } from "sonner";
@@ -14,6 +14,12 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-dancing",
 });
 
 export const metadata: Metadata = {
@@ -33,7 +39,7 @@ export default function RootLayout({
     <AntProvider>
       <html lang="en">
         <body
-          className={`${lora.variable} ${poppins.variable} antialiased font-sans bg-background text-foreground`}
+          className={`${lora.variable} ${poppins.variable} ${dancingScript.variable} antialiased font-sans bg-background text-foreground`}
         >
           <Toaster position="top-center" duration={2000} />
           {children}

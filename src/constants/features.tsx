@@ -25,4 +25,28 @@ const FEATURES = [
   },
 ];
 
-export { FEATURES };
+const dishes = [
+  {
+    id: 1,
+    title: 'Onigiri',
+    description: 'Japanese Dish',
+    price: '10.99',
+    image: '/assets/images/popular-onigiri.png',
+  },
+  {
+    id: 2,
+    title: 'Spring Rolls',
+    description: 'Japanese Dish',
+    price: '15.99',
+    image: '/assets/images/popular-spring-rols.png',
+  },
+  {
+    id: 3,
+    title: 'Sushi Rolls',
+    description: 'Japanese Dish',
+    price: '19.99',
+    image: '/assets/images/home-sushi-rolls.png',
+  },
+];
+
+export { FEATURES, dishes };

@@ -81,7 +81,7 @@ export default function Navbar() {
               height={80}
               className="h-[35px] lg:h-[25px] w-fit"
             />
-            <p className="text-xl font-semibold text-[#2C2420] hover:text-primary ">Sushi </p>
+            <p className="text-xl font-semibold text-[#2C2420] hover:text-primary font-lora">Sushi </p>
           </Link>
 
           {/* Desktop Navigation Links */}
