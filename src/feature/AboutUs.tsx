@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function AboutUs() {
     return (
         <div className="relative overflow-hidden">
-            <section className="container pb-16 md:pb-24  ">
+            <section className="container pb-16 md:pb-[120px]  ">
                 <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
 
                     {/* Image Side - Left on Desktop */}

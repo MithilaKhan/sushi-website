@@ -6,7 +6,7 @@ import { dishes } from '@/constants/features';
 
 export default function BestFood() {
     return (
-        <section className="container pb-16 md:pb-24">
+        <section className="container pb-16  md:pb-[120px]">
             {/* Section Header */}
             <div className="text-center mb-24">
                 <span className="section-title ">The Best Food</span>
