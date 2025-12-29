@@ -6,15 +6,15 @@ export default function Banner() {
   return (
     <div id="banner" className="relative overflow-hidden">
       <section className="container pt-32 md:pt-32 pb-20 md:pb-24 overflow-hidden ">
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-0 md:gap-8">
+        <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-between gap-0 md:gap-8">
           {/* Left Content */}
-          <div className="flex-1 w-full text-center md:text-left z-10 space-y-6 md:space-y-8">
+          <div className="flex-1 w-full text-center lg:text-left z-10 space-y-6 md:space-y-8">
             <div className="space-y-4 font-lora">
-              <h1 className="text-4xl md:text-[68px] font-medium leading-tight text-[#333333] dark:text-[#E2D5D0]">
+              <h1 className="text-4xl md:text-[58px] lg:text-[68px] font-medium leading-tight text-[#333333] dark:text-[#E2D5D0]">
                 Enjoy Delicious
-                <div className="flex items-center justify-center md:justify-start gap-4">
+                <div className="flex  items-center justify-center lg:justify-start gap-4">
                   <span className="relative inline-block">
-                    <span className="relative z-10 w-12 h-12 md:w-[65px] md:h-[65px] inline-block align-middle md:mr-2 mr-0">
+                    <span className="relative z-10 w-12 h-12 md:w-14 md:h-14 lg:w-16.25 lg:h-16.25 inline-block align-middle md:mr-2 mr-0">
                       <Image
                         src="/assets/images/home-sushi-title.png"
                         alt="Sushi Icon"
@@ -26,12 +26,12 @@ export default function Banner() {
                   <span>Sushi Food</span>
                 </div>
               </h1>
-              <p className=" max-w-sm mx-auto md:mx-0 text-[#68544B] dark:text-[#B4A197] font-poppins text-[16px] md:text-[18px]">
+              <p className=" max-w-sm mx-auto lg:mx-0 text-[#68544B] dark:text-[#B4A197] font-poppins text-[16px] md:text-[18px]">
                 Enjoy a good dinner with the best dishes in the restaurant and improve
                 your day.
               </p>
             </div>
-            <button className="group bg-primary  text-white px-8 py-4 rounded-full flex items-center gap-2 font-medium mx-auto md:mx-0 cursor-pointer">
+            <button className="group bg-primary  text-white px-8 py-4 rounded-full flex items-center gap-2 font-medium mx-auto lg:mx-0 cursor-pointer">
               Order Now
               <ArrowRight
                 size={20}
@@ -41,8 +41,8 @@ export default function Banner() {
           </div>
 
           {/* Right Content - Main Image */}
-          <div className="flex-1 relative w-full flex justify-center md:justify-end z-10">
-            <div className="relative w-[300px] h-[300px] md:w-[600px] md:h-[500px]">
+          <div className="flex-1 relative w-full flex justify-center lg:justify-end z-10">
+            <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[450px] lg:w-[600px] lg:h-[500px]">
               <Image
                 src="/assets/images/home-sushi-rolls.png"
                 alt="Delicious Sushi"

@@ -44,7 +44,7 @@ export default function RecentlyAdded() {
 
                     {/* Right Content - Image */}
                     <div className="flex-1 relative w-full flex justify-center items-center">
-                        <div className="relative w-[300px] h-[220px] md:w-[500px] md:h-[350px]">
+                        <div className="relative w-[300px] h-[220px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[350px]">
                             <Image
                                 src="/assets/images/recently-salmon-sushi.png"
                                 alt="Sushi Samurai Salmón Cheese"

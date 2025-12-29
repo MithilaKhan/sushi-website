@@ -14,7 +14,7 @@ export default function BestFood() {
             </div>
 
             {/* Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-24 gap-x-16 md:pt-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-24 gap-x-16 md:gap-x-6 lg:gap-x-16 md:pt-3">
                 {dishes.map((dish) => (
                     <div
                         key={dish.id}

@@ -5,11 +5,11 @@ export default function AboutUs() {
     return (
         <div id="about" className="relative overflow-hidden">
             <section className="container pb-16 md:pb-[120px]  ">
-                <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
+                <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-20">
 
                     {/* Image Side - Left on Desktop */}
-                    <div className="flex-1 relative w-full flex justify-center md:justify-start order-2 md:order-1">
-                        <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[400px]">
+                    <div className="flex-1 relative w-full flex justify-center md:justify-start order-2 lg:order-1">
+                        <div className="relative w-[300px] h-[300px] md:w-[350px] md:h-[300px] lg:w-[450px] lg:h-[400px]">
                             {/* Main Image */}
                             <Image
                                 src="/assets/images/about-sushi.png"
