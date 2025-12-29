@@ -6,7 +6,7 @@ import { dishes } from '@/constants/features';
 
 export default function BestFood() {
     return (
-        <section className="container pb-16  md:pb-[120px]">
+        <section id="best-food" className="container pb-16  md:pb-[120px]">
             {/* Section Header */}
             <div className="text-center mb-24">
                 <span className="section-title ">The Best Food</span>
@@ -18,7 +18,7 @@ export default function BestFood() {
                 {dishes.map((dish) => (
                     <div
                         key={dish.id}
-                        className="group relative bg-[#fff5f0] rounded-[40px] p-6 pt-32 pb-8 text-center shadow-[0_8px_20px_hsla(19,64%,48%,0.08)]  transition-transform duration-300 hover:-translate-y-1"
+                        className="group relative bg-[#fff5f0] dark:bg-[#1C1917] rounded-[40px] p-6 pt-32 pb-8 text-center shadow-[0_8px_20px_hsla(19,64%,48%,0.08)] dark:shadow-[0_8px_20px_hsla(19, 64%, 4%, .2)] dark:border-2 dark:border-[#292625]  transition-transform duration-300 hover:-translate-y-1"
                     >
                         {/* Floating Image */}
                         <div className="absolute -top-11 left-1/2 -translate-x-1/2 w-[230px] h-[145px] rotate-2 transition-transform duration-300 group-hover:scale-105">
@@ -32,10 +32,10 @@ export default function BestFood() {
 
                         {/* Content */}
                         <div className="flex flex-col items-center">
-                            <h3 className="font-lora text-2xl font-medium text-foreground mb-1">
+                            <h3 className="font-lora dark:text-[#E2D5D0] text-2xl font-medium text-foreground mb-1">
                                 {dish.title}
                             </h3>
-                            <p className="font-poppins text-sm text-[#68544B] mb-6">
+                            <p className="font-poppins dark:text-[#B4A197] text-sm text-[#68544B] mb-6">
                                 {dish.description}
                             </p>
 

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Dancing_Script, Lora, Poppins } from "next/font/google";
 import "./globals.css";
-import AntProvider from "../lib/provider/AntProvider";
-import { Toaster } from "sonner";
+import { ThemeProvider } from "@/lib/provider/ThemeProvider";
 
 const lora = Lora({
   variable: "--font-lora",
@@ -36,15 +35,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <AntProvider>
-      <html lang="en">
-        <body
-          className={`${lora.variable} ${poppins.variable} ${dancingScript.variable} antialiased font-sans bg-background text-foreground`}
-        >
-          <Toaster position="top-center" duration={2000} />
+    <html lang="en">
+      <body
+        className={`${lora.variable} ${poppins.variable} ${dancingScript.variable} antialiased font-sans bg-background text-foreground`}
+      >
+        <ThemeProvider>
           {children}
-        </body>
-      </html>
-    </AntProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

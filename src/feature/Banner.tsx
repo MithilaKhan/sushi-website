@@ -4,13 +4,13 @@ import { ArrowRight } from "lucide-react";
 
 export default function Banner() {
   return (
-    <div className="relative overflow-hidden">
+    <div id="banner" className="relative overflow-hidden">
       <section className="container pt-32 md:pt-32 pb-20 md:pb-24 overflow-hidden ">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-0 md:gap-8">
           {/* Left Content */}
           <div className="flex-1 w-full text-center md:text-left z-10 space-y-6 md:space-y-8">
             <div className="space-y-4 font-lora">
-              <h1 className="text-4xl md:text-[68px] font-medium leading-tight text-[#333333]">
+              <h1 className="text-4xl md:text-[68px] font-medium leading-tight text-[#333333] dark:text-[#E2D5D0]">
                 Enjoy Delicious
                 <div className="flex items-center justify-center md:justify-start gap-4">
                   <span className="relative inline-block">
@@ -26,7 +26,7 @@ export default function Banner() {
                   <span>Sushi Food</span>
                 </div>
               </h1>
-              <p className=" max-w-sm mx-auto md:mx-0 text-[#68544B] font-poppins text-[16px] md:text-[18px]">
+              <p className=" max-w-sm mx-auto md:mx-0 text-[#68544B] dark:text-[#B4A197] font-poppins text-[16px] md:text-[18px]">
                 Enjoy a good dinner with the best dishes in the restaurant and improve
                 your day.
               </p>

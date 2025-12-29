@@ -1,4 +1,4 @@
-"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -22,31 +22,31 @@ export default function Footer() {
     <div>
       <footer className={`relative overflow-hidden ${poppins.className}`}>
 
-        <div className="container mx-auto px-4 md:px-5 pt-20 md:pt-32 pb-12 text-[#68544B]">
+        <div className="container mx-auto px-4 md:px-5 pt-20 md:pt-32 pb-12 text-[#68544B] dark:text-[#B4A197]">
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 relative">
 
             {/* Brand Column */}
             <div className="col-span-2 lg:col-span-4 flex flex-col gap-6">
               <div className="flex items-center gap-2">
                 <Image src="/logo.png" alt="Sushi Logo" width={30} height={30} className="w-8 h-auto" />
-                <span className={`text-2xl font-semibold text-[#2e211e] ${lora.className}`}>Sushi</span>
+                <span className={`text-2xl font-semibold text-[#2e211e] dark:text-[#E2D5D0] ${lora.className}`}>Sushi</span>
               </div>
-              <p className="text-[#68544B] leading-relaxed max-w-[280px] text-[16px] tracking-wide ">
+              <p className="text-[#68544B] dark:text-[#B4A197] leading-relaxed max-w-[280px] text-[16px] tracking-wide ">
                 Food for the body is not enough. There must be food for the soul.
               </p>
 
               <div className="absolute right-0 top-10 md:hidden">
-                <Image src="/assets/images/spring-onion.png" alt="leaf" width={40} height={40} className="w-[40px] rotate-[-45deg]" />
+                <Image src="/assets/images/spring-onion.png" alt="leaf" width={40} height={40} className="w-[40px] -rotate-45" />
               </div>
 
               <div className="max-w-[280px] hidden md:flex justify-center pt-3">
-                <Image src="/assets/images/spinach-leaf.png" alt="leaf" width={30} height={30} className="w-[30px] rotate-[45deg] " />
+                <Image src="/assets/images/spinach-leaf.png" alt="leaf" width={30} height={30} className="w-[30px] rotate-45 " />
               </div>
             </div>
 
             {/* Links Columns */}
             <div className="col-span-1 lg:col-span-2">
-              <h3 className="font-medium text-[#2e211e] mb-6 text-[16px]">Main Menu</h3>
+              <h3 className="font-medium text-[#2e211e] dark:text-[#E2D5D0] mb-6 text-[16px]">Main Menu</h3>
               <ul className="flex flex-col gap-2  text-[16px]">
                 {footerData.mainMenu.map((link) => (
                   <li key={link.label}>
@@ -57,7 +57,7 @@ export default function Footer() {
             </div>
 
             <div className="col-span-1 lg:col-span-2 transition-all">
-              <h3 className="font-medium text-[#2e211e] mb-6 text-[16px]">Information</h3>
+              <h3 className="font-medium text-[#2e211e] dark:text-[#E2D5D0] mb-6 text-[16px]">Information</h3>
               <ul className="flex flex-col gap-2  text-[16px]">
                 {footerData.information.map((link) => (
                   <li key={link.label}>
@@ -69,14 +69,14 @@ export default function Footer() {
 
             {/* Address Column */}
             <div className="col-span-1 lg:col-span-2">
-              <h3 className="font-medium text-[#2e211e] mb-6 text-[16px]">Address</h3>
+              <h3 className="font-medium text-[#2e211e] dark:text-[#E2D5D0] mb-6 text-[16px]">Address</h3>
               <div className="flex flex-col gap-2  text-[16px]">
                 <p>{footerData.address.location}</p>
                 <p>{footerData.address.hours}</p>
               </div>
               {/* Leaf Decoration - Mobile Only (Below Address) */}
               <div className="flex md:hidden pt-6">
-                <Image src="/assets/images/spinach-leaf.png" alt="leaf" width={40} height={40} className="w-[40px] rotate-[45deg]" />
+                <Image src="/assets/images/spinach-leaf.png" alt="leaf" width={40} height={40} className="w-[40px] rotate-45" />
 
                 <div className="absolute -bottom-1 right-0 pointer-events-none">
                   <Image
@@ -92,7 +92,7 @@ export default function Footer() {
 
             {/* Socials Column */}
             <div className="col-span-1 lg:col-span-2">
-              <h3 className="font-medium text-[#2e211e] mb-6 text-[16px]">Social Media</h3>
+              <h3 className="font-medium text-[#2e211e] dark:text-[#E2D5D0] mb-6 text-[16px]">Social Media</h3>
               <div className="flex gap-4">
                 {footerData.socials.map((social, index) => (
                   <a key={index} href={social.href} className="w-10 h-10 rounded-full bg-[#f0d8cc] text-[#d36836] flex items-center justify-center hover:bg-[#d36836] hover:text-white transition-all">
@@ -109,7 +109,7 @@ export default function Footer() {
 
           {/* Bottom Bar */}
           <div className="flex flex-col-reverse md:flex-row items-center justify-between md:mt-16 mt-0 pt-8 ">
-            <p className="text-sm text-[#68544B] font-medium opacity-60 mt-6 md:mt-0">© Copyright. All rights reserved</p>
+            <p className="text-sm text-[#68544B] dark:text-[#958983] font-medium opacity-60 mt-6 md:mt-0">© Copyright. All rights reserved</p>
 
             <div className="flex items-center gap-4">
               {footerData.paymentCards.map((card, index) => (

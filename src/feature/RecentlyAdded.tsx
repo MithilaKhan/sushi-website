@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function RecentlyAdded() {
     return (
-        <div className="relative overflow-hidden">
+        <div id="recent" className="relative overflow-hidden">
             <section className="container pb-16 md:pb-[120px] md:pt-10 pt-12 ">
                 <div className="flex flex-col md:flex-row items-center gap-10 md:gap-12">
                     {/* Left Content - Text */}

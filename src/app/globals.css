@@ -1,8 +1,15 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #fff1eb;
   --foreground: #0a0a0a;
+  --primary: #d36836;
+}
+
+.dark {
+  --background: #171412;
+  --foreground: #ffffff;
   --primary: #d36836;
 }
 
@@ -21,11 +28,11 @@
   }
 
   .section-subtitle {
-    @apply text-3xl lg:text-4xl font-medium leading-12 mb-6 tracking-wide;
+    @apply text-3xl lg:text-4xl dark:text-[#E2D5D0] font-medium leading-12 mb-6 tracking-wide;
   }
 
   .section-description {
-    @apply text-[#68544B] text-sm lg:text-[18px] leading-relaxed;
+    @apply text-[#68544B] dark:text-[#B4A197] text-sm lg:text-[18px] leading-relaxed;
     font-family: var(--font-poppins), sans-serif;
   }
 
